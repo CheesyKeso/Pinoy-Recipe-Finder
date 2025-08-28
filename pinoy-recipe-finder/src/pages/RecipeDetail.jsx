@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 const RecipeDetail = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     fetch('/recipes.json')
@@ -14,6 +15,23 @@ const RecipeDetail = () => {
       })
       .catch((error) => console.error('Error loading recipe:', error));
   }, [id]);
+
+  useEffect(() => {
+    // Check if this recipe is favorited
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    setIsFavorite(favorites.includes(Number(id)));
+  }, [id]);
+
+  const handleFavorite = () => {
+    let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    if (isFavorite) {
+      favorites = favorites.filter(favId => favId !== Number(id));
+    } else {
+      favorites.push(Number(id));
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    setIsFavorite(!isFavorite);
+  };
 
   if (!recipe) {
     return <p>Loading...</p>;
@@ -26,6 +44,20 @@ const RecipeDetail = () => {
       </Link>
       <h1>{recipe.name}</h1>
       <img src={recipe.image} alt={recipe.name} style={{ width: '100%', maxHeight: '300px', objectFit: 'cover', marginBottom: '1rem' }} />
+      <button
+        onClick={handleFavorite}
+        style={{
+          background: isFavorite ? '#f87171' : '#2563eb',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '4px',
+          padding: '0.5rem 1rem',
+          marginBottom: '1rem',
+          cursor: 'pointer'
+        }}
+      >
+        {isFavorite ? 'Unfavorite' : 'Favorite'}
+      </button>
       <p>{recipe.description}</p>
       <h2>Ingredients</h2>
       <ul>
@@ -42,5 +74,6 @@ const RecipeDetail = () => {
     </div>
   );
 };
+
 
 export default RecipeDetail;
