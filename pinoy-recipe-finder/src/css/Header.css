@@ -39,7 +39,7 @@
 .favorites-link:hover,
 .favorites-link:focus {
   background: linear-gradient(90deg, #0288d1 60%, #0277bd 100%);
-  color: #fff;
+  color: #ffff;
 }
 .favorites-count {
   margin-left: 0.5rem;
