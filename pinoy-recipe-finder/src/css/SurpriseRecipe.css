@@ -1,0 +1,45 @@
+.surprise-bg {
+  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 2.5rem 0 2.5rem 0;
+  text-align: center;
+  border-radius: 0 0 24px 24px;
+  margin-bottom: 2rem;
+  color: #fff;
+  position: relative;
+}
+.surprise-inner {
+  background: rgba(0,0,0,0.10);
+  border-radius: 12px;
+  display: inline-block;
+  padding: 1.5rem 2rem 2rem 2rem;
+}
+.surprise-title {
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 0 0 0.2em 0;
+  color: #fff;
+}
+.surprise-desc {
+  font-size: 1.3rem;
+  margin-bottom: 1.3rem;
+  margin-top: 0.2rem;
+}
+.surprise-btn {
+  background: #fde68a;
+  color: #92400e;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(251,191,36,0.10);
+  transition: background 0.2s, color 0.2s;
+}
+.surprise-btn:hover,
+.surprise-btn:focus {
+  background: #fbbf24;
+  color: #fff;
+}

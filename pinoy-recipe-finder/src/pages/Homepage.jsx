@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../css/Homepage.css';
 import SearchBar from '../components/SearchBar';
+import SurpriseRecipe from '../components/SurpriseRecipe';
 
 const Homepage = () => {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>Filipino Cuisine</h1>
-      <SearchBar />
+    <div className="homepage-container">
+      <SurpriseRecipe />
+      <div>
+        <h1 className="homepage-title">Filipino Cuisine</h1>
+        <SearchBar />
+      </div>
     </div>
   );
 };
