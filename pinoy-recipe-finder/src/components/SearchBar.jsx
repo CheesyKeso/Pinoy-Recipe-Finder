@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = ({ filteredCategory }) => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
 
@@ -13,9 +13,11 @@ const SearchBar = () => {
       .catch((error) => console.error('Error loading recipes:', error));
   }, []);
 
-  const filteredRecipes = recipes.filter(recipe =>
-    recipe.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredRecipes = recipes.filter(recipe => {
+    const matchesSearch = recipe.name.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = !filteredCategory || recipe.category === filteredCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div>
@@ -45,4 +47,5 @@ const SearchBar = () => {
     </div>
   );
 };
+
 export default SearchBar;

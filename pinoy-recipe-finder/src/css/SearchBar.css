@@ -1,6 +1,14 @@
 .searchbar-input-container {
-  margin-bottom: 2rem;
+  margin-bottom: 15px; 
   text-align: center;
+  position: sticky;
+  top: 70px; 
+  background-color: transparent; 
+  z-index: 1000;
+  padding: 10px 10px 10px 10px; /* Add padding to all sides */
+  padding-top: 20px; /* Add extra padding to the top */
+  box-shadow: none; 
+  border: none; 
 }
 .searchbar-input {
   padding: 0.7rem 1.2rem;

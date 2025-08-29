@@ -44,6 +44,7 @@ const RecipeDetail = () => {
         &larr; Back to Homepage
       </Link>
       <h1>{recipe.name}</h1>
+      <p className="recipe-category">Category: {recipe.category}</p>
       <img src={recipe.image} alt={recipe.name} className="recipe-detail-img" />
       <button
         onClick={handleFavorite}
