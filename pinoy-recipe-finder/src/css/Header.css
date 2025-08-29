@@ -25,32 +25,28 @@
   color: #a5b4fc;
 }
 .favorites-link {
-  color: #16a34a;
-  background: linear-gradient(90deg, #fff 70%, #bbf7d0 100%);
-  padding: 0.5rem 1.5rem;
-  border-radius: 24px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-left: 1rem;
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08);
-  border: 2px solid #16a34a;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  background: linear-gradient(90deg, #81d4fa 60%, #4fc3f7 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(251,191,36,0.10);
+  transition: background 0.2s, color 0.2s;
 }
-.favorites-link:hover {
-  background: linear-gradient(90deg, #bbf7d0 70%, #fff 100%);
-  color: #166534;
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.18);
+.favorites-link:hover,
+.favorites-link:focus {
+  background: linear-gradient(90deg, #0288d1 60%, #0277bd 100%);
+  color: #fff;
 }
 .favorites-count {
   margin-left: 0.5rem;
-  color: #2563eb;
-  background: #e0e7ff;
-  border-radius: 50%;
-  padding: 0.2em 0.7em;
+  color: #000000;
+  background: #ffffff;
+  border-radius: 100%;
+  padding: 0.2em 0.2em;
   font-size: 1rem;
   font-weight: bold;
   box-shadow: 0 1px 4px rgba(37,99,235,0.08);

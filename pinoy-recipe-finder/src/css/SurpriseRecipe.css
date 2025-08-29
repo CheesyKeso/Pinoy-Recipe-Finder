@@ -38,8 +38,8 @@
   box-shadow: 0 2px 8px rgba(251,191,36,0.10);
   transition: background 0.2s, color 0.2s;
 }
-.surprise-btn:hover,
-.surprise-btn:focus {
+.surprise-btn:hover, 
+.surprise-btn:focus{
   background: #fbbf24;
   color: #fff;
 }
