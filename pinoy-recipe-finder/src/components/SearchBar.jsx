@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import RecipeCard from './RecipeCard';
 import '../css/SearchBar.css';
 
 const SearchBar = ({ filteredCategory }) => {
@@ -32,16 +32,7 @@ const SearchBar = ({ filteredCategory }) => {
       </div>
       <div className="searchbar-results">
         {filteredRecipes.map((recipe) => (
-          <div key={recipe.id} className="searchbar-card">
-            <img src={recipe.image} alt={recipe.name} className="searchbar-card-img" />
-            <div className="searchbar-card-content">
-              <h3>{recipe.name}</h3>
-              <p className="searchbar-card-desc">{recipe.description}</p>
-              <Link to={`/recipe/${recipe.id}`} className="searchbar-card-link">
-                View Recipe
-              </Link>
-            </div>
-          </div>
+          <RecipeCard key={recipe.id} recipe={recipe} />
         ))}
       </div>
     </div>
@@ -49,3 +40,4 @@ const SearchBar = ({ filteredCategory }) => {
 };
 
 export default SearchBar;
+            

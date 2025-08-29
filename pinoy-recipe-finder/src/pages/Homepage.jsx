@@ -5,6 +5,7 @@ import SearchBar from '../components/SearchBar';
 import SurpriseRecipe from '../components/SurpriseRecipe';
 import CategoryFilter from '../components/CategoryFilter';
 
+
 const Homepage = () => {
   const [filteredCategory, setFilteredCategory] = useState('');
 
@@ -16,7 +17,6 @@ const Homepage = () => {
     <div className="homepage-container">
       <SurpriseRecipe />
       <div>
-        <h1 className="homepage-title">Filipino Cuisine</h1>
         <CategoryFilter onFilter={handleFilter} />
         <SearchBar filteredCategory={filteredCategory} />
       </div>

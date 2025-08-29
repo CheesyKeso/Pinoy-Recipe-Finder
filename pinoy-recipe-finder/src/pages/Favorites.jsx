@@ -32,11 +32,12 @@ const Favorites = () => {
         <div className="favorites-list">
           {favoriteRecipes.map(recipe => (
             <div key={recipe.id} className="favorite-card">
-              <Link to={`/recipe/${recipe.id}`} className="favorite-card-link">
-                <img src={recipe.image} alt={recipe.name} className="favorite-card-img" />
-                <h2 className="favorite-card-title">{recipe.name}</h2>
-              </Link>
+              <img src={recipe.image} alt={recipe.name} className="favorite-card-img" />
+              <h2 className="favorite-card-title">{recipe.name}</h2>
               <p className="favorite-card-desc">{recipe.description}</p>
+              <Link to={`/recipe/${recipe.id}`} className="favorite-card-link">
+                View Recipe
+              </Link>
             </div>
           ))}
         </div>
