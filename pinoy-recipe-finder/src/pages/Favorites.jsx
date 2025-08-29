@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Favorites = () => {
-  const [recipes, setRecipes] = useState([]);
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
 
   useEffect(() => {
     fetch('/recipes.json')
       .then((response) => response.json())
       .then((data) => {
-        setRecipes(data);
         const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
         const favRecipes = data.filter(recipe => favorites.includes(recipe.id));
         setFavoriteRecipes(favRecipes);
@@ -21,7 +19,12 @@ const Favorites = () => {
       <Link to="/" style={{ color: '#2563eb', textDecoration: 'none', marginBottom: '1rem', display: 'inline-block' }}>
         &larr; Back to Homepage
       </Link>
-      <h1>Favorited Recipes</h1>
+      <h1>
+        Favorited Recipes
+        <span style={{ fontSize: '1rem', color: '#2563eb', marginLeft: '0.5rem' }}>
+          ({favoriteRecipes.length})
+        </span>
+      </h1>
       {favoriteRecipes.length === 0 ? (
         <p>No favorited recipes yet.</p>
       ) : (
