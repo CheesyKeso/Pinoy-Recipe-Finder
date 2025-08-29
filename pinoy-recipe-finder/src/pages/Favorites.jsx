@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../css/Favorites.css';
 
 const Favorites = () => {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -15,27 +16,27 @@ const Favorites = () => {
   }, []);
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <Link to="/" style={{ color: '#2563eb', textDecoration: 'none', marginBottom: '1rem', display: 'inline-block' }}>
+    <div className="favorites-container">
+      <Link to="/" className="back-link">
         &larr; Back to Homepage
       </Link>
       <h1>
         Favorited Recipes
-        <span style={{ fontSize: '1rem', color: '#2563eb', marginLeft: '0.5rem' }}>
+        <span className="favorites-page-count">
           ({favoriteRecipes.length})
         </span>
       </h1>
       {favoriteRecipes.length === 0 ? (
         <p>No favorited recipes yet.</p>
       ) : (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+        <div className="favorites-list">
           {favoriteRecipes.map(recipe => (
-            <div key={recipe.id} style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '1rem', width: '250px' }}>
-              <Link to={`/recipe/${recipe.id}`} style={{ textDecoration: 'none', color: '#2563eb' }}>
-                <img src={recipe.image} alt={recipe.name} style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '4px' }} />
-                <h2 style={{ fontSize: '1.2rem', margin: '0.5rem 0' }}>{recipe.name}</h2>
+            <div key={recipe.id} className="favorite-card">
+              <Link to={`/recipe/${recipe.id}`} className="favorite-card-link">
+                <img src={recipe.image} alt={recipe.name} className="favorite-card-img" />
+                <h2 className="favorite-card-title">{recipe.name}</h2>
               </Link>
-              <p style={{ fontSize: '0.9rem', color: '#555' }}>{recipe.description}</p>
+              <p className="favorite-card-desc">{recipe.description}</p>
             </div>
           ))}
         </div>

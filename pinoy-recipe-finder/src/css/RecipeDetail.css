@@ -1,0 +1,67 @@
+.recipe-detail-container {
+  padding: 2rem;
+  background: linear-gradient(120deg, #f1f5f9 60%, #e0e7ff 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(30, 64, 175, 0.10);
+  max-width: 700px;
+  margin: 2rem auto;
+  animation: fadeInDetail 0.5s;
+}
+@keyframes fadeInDetail {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.back-link {
+  color: #2563eb;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.back-link:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+.recipe-detail-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30, 64, 175, 0.10);
+}
+.favorite-btn {
+  background: linear-gradient(90deg, #2563eb 60%, #1e40af 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.6rem 1.5rem;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  outline: none;
+}
+.favorite-btn.favorited {
+  background: linear-gradient(90deg, #f87171 60%, #ef4444 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(239,68,68,0.15);
+  transform: scale(1.04);
+}
+.favorite-btn:hover {
+  background: linear-gradient(90deg, #1e40af 60%, #2563eb 100%);
+  box-shadow: 0 6px 24px rgba(37,99,235,0.18);
+  transform: scale(1.04);
+}
+h1, h2 {
+  color: #1e293b;
+  margin-top: 1.2rem;
+}
+ul, ol {
+  margin-left: 1.5rem;
+  font-size: 1.05rem;
+}
